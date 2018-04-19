@@ -120,7 +120,7 @@ def color_detect():
                 return True
 
     print("Failed to learned thresholds...")
-    print("Abrading...")
+    print("Quit...")
     return False
 
 
@@ -131,8 +131,8 @@ LED = pyb.LED(3)
 myarm.init()
 time.sleep(500)
 
-face_mode = face_detect() #Try to start with face tracking first, return val is FaceCascade object
-if not face_mode: RGB_mode=color_detect() #Return val is detected color threshold
+face_mode = face_detect() #Try to start with face tracking first, return true or false
+if not face_mode: RGB_mode=color_detect() 
 
 print(face_mode, RGB_mode)
 
